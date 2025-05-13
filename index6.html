@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 6</title>
+  <style>
+    /* Remover estilo padrão da lista */
+    .lista-tarefas {
+      list-style: none; /* Remover bolinhas padrão */
+      padding: 0; /* Remover padding */
+    }
+
+    /* Estilizar os itens da lista */
+    .lista-tarefas li {
+      position: relative; /* Necessário para posicionar o ícone */
+      padding-left: 25px; /* Espaço para o ícone */
+      margin-bottom: 10px; /* Espaçamento entre itens */
+    }
+
+    /* Adicionar ícone antes de cada item */
+    .lista-tarefas li::before {
+      content: "✓"; /* Ícone de check */
+      color: green; /* Cor do ícone */
+      position: absolute; /* Posicionar ícone */
+      left: 0; /* Alinhar à esquerda */
+      top: 0; /* Alinhar ao topo */
+    }
+  </style>
+</head>
+<body>
+  <ul class="lista-tarefas">
+    <li>Estudar CSS</li>
+    <li>Praticar exercícios</li>
+    <li>Fazer um projeto</li>
+  </ul>
+</body>
+</html>

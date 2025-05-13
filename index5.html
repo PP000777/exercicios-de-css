@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 5</title>
+  <style>
+    /* Estilização do formulário */
+    .formulario {
+      display: grid; /* Usar grid layout */
+      grid-template-columns: 1fr 1fr; /* Duas colunas */
+      gap: 15px; /* Espaçamento entre os campos */
+      max-width: 400px; /* Largura máxima */
+      margin: 20px auto; /* Centralizar */
+    }
+
+    .formulario button {
+      grid-column: span 2; /* Botão ocupa duas colunas */
+      justify-self: center; /* Centralizar botão */
+      padding: 10px 20px; /* Espaçamento interno */
+      background-color: green; /* Cor de fundo */
+      color: white; /* Cor do texto */
+      border: none; /* Remover borda */
+      border-radius: 5px; /* Bordas arredondadas */
+      cursor: pointer; /* Alterar cursor */
+    }
+  </style>
+</head>
+<body>
+  <form class="formulario">
+    <input type="text" placeholder="Nome">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Telefone">
+    <input type="text" placeholder="Cidade">
+    <button>Enviar</button>
+  </form>
+</body>
+</html>
