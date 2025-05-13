@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pixelify Sans', sans-serif;
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        :root {
+            --fire: #F08030;
+            --water: #6890F0;
+            --grass: #78C850;
+            --electric: #F8D030;
+            --psychic: #F85888;
+            --ice: #98D8D8;
+            --dragon: #7038F8;
+            --dark: #705848;
+            --fairy: #EE99AC;
+            --normal: #A8A878;
+            --fighting: #C03028;
+            --flying: #A890F0;
+            --poison: #A040A0;
+            --ground: #E0C068;
+            --rock: #B8A038;
+            --bug: #A8B820;
+            --ghost: #705898;
+            --steel: #B8B8D0;
+        }
+
+        .fire {
+            background-color: var(--fire);
+        }
+
+        .water {
+            background-color: var(--water);
+        }
+
+        .grass {
+            background-color: var(--grass);
+        }
+
+        .electric {
+            background-color: var(--electric);
+            color: black;
+        }
+
+        .psychic {
+            background-color: var(--psychic);
+        }
+
+        .ice {
+            background-color: var(--ice);
+            color: black;
+        }
+
+        .dragon {
+            background-color: var(--dragon);
+        }
+
+        .dark {
+            background-color: var(--dark);
+        }
+
+        .fairy {
+            background-color: var(--fairy);
+            color: black;
+        }
+
+        .normal {
+            background-color: var(--normal);
+        }
+
+        .fighting {
+            background-color: var(--fighting);
+        }
+
+        .flying {
+            background-color: var(--flying);
+        }
+
+        .poison {
+            background-color: var(--poison);
+        }
+
+        .ground {
+            background-color: var(--ground);
+            color: black;
+        }
+
+        .rock {
+            background-color: var(--rock);
+        }
+
+        .bug {
+            background-color: var(--bug);
+        }
+
+        .ghost {
+            background-color: var(--ghost);
+        }
+
+        .steel {
+            background-color: var(--steel);
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            transition: background-color 0.3s ease, transform 0.5s ease, shadow-box 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .container.fire {
+            background-color: #F5AC78;
+        }
+
+        .container.water {
+            background-color: #9DB7F5;
+        }
+
+        .container.grass {
+            background-color: #A7DB8D;
+        }
+
+        .container.electric {
+            background-color: #FAE078;
+        }
+
+        .container.psychic {
+            background-color: #FA92B2;
+        }
+
+        .container.ice {
+            background-color: #BCE6E6;
+        }
+
+        .container.dragon {
+            background-color: #A27DFA;
+        }
+
+        .container.dark {
+            background-color: #A29288;
+        }
+
+        .container.fairy {
+            background-color: #F4BDC9;
+        }
+
+        .container.normal {
+            background-color: #C6C6A7;
+        }
+
+        .container.fighting {
+            background-color: #D67873;
+        }
+
+        .container.flying {
+            background-color: #C6B7F5;
+        }
+
+        .container.poison {
+            background-color: #C183C1;
+        }
+
+        .container.ground {
+            background-color: #EBD69D;
+        }
+
+        .container.rock {
+            background-color: #D1C17D;
+        }
+
+        .container.bug {
+            background-color: #C6D16E;
+        }
+
+        .container.ghost {
+            background-color: #A292BC;
+        }
+
+        .container.steel {
+            background-color: #D1D1E0;
+        }
+
+        .imagee {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .imagee:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        input:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1b1b1b;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <div>
+        <h1>Pokedéx</h1>
+        <div class="container">
+
+            <img class="imagee"
+                src="https://preview.redd.it/b942yo2ge0s41.jpg?auto=webp&s=c5c3779feb1637cd60778a47222a45e62fb27996"
+                alt="Imagem do Pikachu">
+            <div class="info">
+                <p><strong>Nome: </strong><span id="name">---</span></p>
+                <p><strong>Tipo: </strong><span id="type">---</span></p>
+                <p><strong>Numero: </strong><span id="number">---</span></p>
+                <p><strong>Peso:</strong> <span id="peso">---</span></p>
+                <p><strong>Altura:</strong> <span id="altura">---</span></p>
+            </div>
+
+            <div class="search-area">
+                <input type="text" id="search" placeholder="Digite o nome ou Numero do Pokémon">
+                <button id="search-button">Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let searchInput = document.querySelector("#search")
+        let button = document.querySelector("#search-button")
+
+        function getInputValue() {
+            let inputValue = searchInput.value;
+            return inputValue;
+        }
+
+        function searchPokemon() {
+            let linkApi = `https://pokeapi.co/api/v2/pokemon/${getInputValue()}`;
+            let namePokemon = document.querySelector("#name");
+            let tipoPokemon = document.querySelector("#type");
+            let numberPokemon = document.querySelector("#number");
+            let imagePokemon = document.querySelector(".imagee");
+            let container = document.querySelector(".container");
+            let pesoPokemon = document.querySelector("#peso");
+            let alturaPokemon = document.querySelector("#altura");
+
+            tipoPokemon.innerHTML = "";
+
+            fetch(linkApi)
+                .then(response => response.json())
+                .then(data => {
+                    namePokemon.innerHTML = data.name;
+                    numberPokemon.innerHTML = data.id;
+                    imagePokemon.src = data.sprites.front_default;
+                    pesoPokemon.innerHTML = data.weight;
+                    alturaPokemon.innerHTML = data.height;
+
+                    let tipos = data.types.map(typeInfo => typeInfo.type.name);
+
+                    // Adiciona vírgulas entre os tipos
+                    tipoPokemon.textContent = tipos.join(', ');
+
+                    // Aplica cores de background para cada tipo
+                    if (tipos.length === 1) {
+                        container.style.background = `var(--${tipos[0]})`;
+                    } else {
+                        let gradient = tipos.map(tipo => `var(--${tipo})`).join(', ');
+                        container.style.background = `linear-gradient(135deg, ${gradient})`;
+                    }
+
+                    // Atualiza as classes CSS
+                    container.className = "container " + tipos.join(" ");
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+
+        button.addEventListener("click", searchPokemon);
+    </script>
+</body>
+
+
+</html>

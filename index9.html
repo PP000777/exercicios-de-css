@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade CSS 9</title>
+</head>
+
+<body>
+
+    <style>
+        body.claro {
+            background-color: white;
+            color: black;
+        }
+
+        body.escuro {
+            background-color: black;
+            color: white;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <h1>Bem-vindo!</h1>
+    <button id="modoClaro">Modo Claro</button>
+    <button id="modoEscuro">Modo Escuro</button>
+
+    <script>
+
+        const btnClaro = document.getElementById("modoClaro");
+        const btnEscuro = document.getElementById("modoEscuro");
+
+        btnClaro.addEventListener("click", () => {
+            document.body.classList.remove("escuro");
+            document.body.classList.add("claro");
+        });
+
+        btnEscuro.addEventListener("click", () => {
+            document.body.classList.remove("claro");
+            document.body.classList.add("escuro");
+        });
+    </script>
+</body>
+
+</html>
